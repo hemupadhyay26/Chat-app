@@ -1,12 +1,26 @@
 
 const express = require('express');
 const path = require('path');
+const hbs = require('hbs');
 
 const app = express();
+const port = process.env.PORT || 3000;
+
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
-//  include the staic file
+
+app.set('view engine', 'hbs');
+app.get('/', (req, res) => {
+    res.render("index");
+});
+
+//  include the static file
+
 app.use(express.static(path.join(__dirname + "/public")));
+
+app.get('*', (req, res) => {
+    res.render("404error");
+});
 
 io.on("connection", function (socket) {
     // send signal to all except the user
