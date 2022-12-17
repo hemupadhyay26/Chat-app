@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     res.render("index");
 });
 
-//  include the static files
+//  include the static file
 
 app.use(express.static(path.join(__dirname + "/public")));
 
