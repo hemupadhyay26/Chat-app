@@ -64,6 +64,7 @@ body {
     padding: 10px;
     border: 1px solid #555;
     font-size: 16px;
+    outline: none;
 }
 .screen .form-input button {
     padding: 10px 20px;
@@ -163,6 +164,7 @@ body {
     flex: 1;
     height: 50px;
     font-size: 18px;
+    outline: none;
 }
 
 .chat-screen .typebox button
